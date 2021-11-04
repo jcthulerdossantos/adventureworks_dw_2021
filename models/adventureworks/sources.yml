@@ -54,10 +54,9 @@ sources:
         - name: sales_salesorderdetail
           description: Detalhes dos pedidos (FACT)
           columns:
-            - name: salesorderdetailid
-              description: id do detalhe do pedido
+            - name: salesorderid
+              description: id do pedido
               tests:
-                - unique
                 - not_null
         - name: sales_salesorderheader
           description: Descrição dos pedidos (FACT)
@@ -68,12 +67,11 @@ sources:
                 - unique
                 - not_null
         - name: sales_salesorderheadersalesreason
-          description: Cruzamento de razões de compra dos clientes (DIM)
+          description: Cruzamento de razões de compra dos clientes (FACT)
           columns:
             - name: salesorderid
               description: id do pedido
               tests:
-                - unique
                 - not_null
         - name: sales_salesreason
           description: Levantamento dos motivos/razões de compra (DIM)
