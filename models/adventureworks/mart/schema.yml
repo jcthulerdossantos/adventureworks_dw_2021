@@ -49,13 +49,12 @@ models:
             tests:
               - unique
               - not_null
-    - name: dim_sales_salesorderheadersalesreason
-      description: "Tabela DIM que cruza dados de compra com dados de razão de compra"
+    - name: fact_sales_salesorderheadersalesreason
+      description: "Tabela FACT com os dados de razão de compra"
       columns:
           - name: salesorderid
             description: "A chave primária original da tabela"
             tests:
-              - unique
               - not_null
     - name: dim_sales_salesreason
       description: "Tabela DIM com a descrição das razões"
@@ -68,10 +67,9 @@ models:
     - name: fact_sales_salesorderdetail
       description: "Tabela FACT com dados financeiros do pedido"
       columns:
-          - name: salesorderdetailid
+          - name: salesorderid
             description: "A chave primária original da tabela"
             tests:
-              - unique
               - not_null
     - name: fact_sales_salesorderheader
       description: "Tabela FACT com dados operacionais do pedido"
